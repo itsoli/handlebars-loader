@@ -1,5 +1,5 @@
 var loaderUtils = require("loader-utils");
-var handlebars = require("handlebars");
+var handlebars = require("./lib/handlebars");
 var async = require("async");
 var util = require("util");
 var path = require("path");
@@ -192,10 +192,10 @@ module.exports = function(source) {
 
     // Compile options
     var opts = assign({
-      knownHelpersOnly: !firstCompile,
+      // knownHelpersOnly: !firstCompile,
       // TODO: Remove these in next major release
-      preventIndent: !!query.preventIndent,
-      compat: !!query.compat
+      // preventIndent: !!query.preventIndent,
+      // compat: !!query.compat
     }, precompileOptions, {
       knownHelpers: knownHelpers,
     });
